@@ -2,6 +2,7 @@
 
 ## Non publié
 - Ajout des carottes râpées
+- Ajout de l'œuf mayonnaise
 
 ## [0.1.0] — Menu de base
 - Ajout de la salade de lentilles
