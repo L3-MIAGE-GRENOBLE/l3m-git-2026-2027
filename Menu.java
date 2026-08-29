@@ -14,6 +14,7 @@ public final class Menu {
         new Plat("Steak haché frites", Categorie.PLAT, 330, false),
         new Plat("Yaourt nature", Categorie.DESSERT, 80, true),
         new Plat("Tarte aux pommes", Categorie.DESSERT, 130, true),
+        new Plat("Mousse au chocolat", Categorie.DESSERT, 120, true),
     };
 
     /** Prix total du menu, en centimes. */
