@@ -1,6 +1,7 @@
 # Journal des modifications
 
 ## Non publié
+- Ajout des carottes râpées
 
 ## [0.1.0] — Menu de base
 - Ajout de la salade de lentilles
