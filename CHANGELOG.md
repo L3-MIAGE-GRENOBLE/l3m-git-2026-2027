@@ -1,6 +1,7 @@
 # Journal des modifications
 
 ## Non publié
+- Ajout de la tarte aux pommes
 
 ## [0.1.0] — Menu de base
 - Ajout de la salade de lentilles
