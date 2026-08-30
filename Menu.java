@@ -15,6 +15,7 @@ public final class Menu {
         new Plat("Œuf mayonnaise", Categorie.ENTREE, 110, true),
         new Plat("Terrine de campagne", Categorie.ENTREE, 150, false),
         new Plat("Steak haché frites", Categorie.PLAT, 390, false),
+        new Plat("Curry de pois chiches", Categorie.PLAT, 300, true),
         new Plat("Yaourt nature", Categorie.DESSERT, 95, true),
         new Plat("Tarte aux pommes", Categorie.DESSERT, 130, true),
         new Plat("Mousse au chocolat", Categorie.DESSERT, 120, true),

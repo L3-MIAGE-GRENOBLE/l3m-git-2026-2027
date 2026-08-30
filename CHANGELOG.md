@@ -7,6 +7,7 @@
 - Ajout de la tarte aux pommes
 - Ajout de la mousse au chocolat
 - Ajout de la salade de fruits
+- Ajout du curry de pois chiches, plat vegetarein
 
 ## [0.1.0] — Menu de base
 - Ajout de la salade de lentilles
