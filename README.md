@@ -18,13 +18,15 @@ Avant de commencer assurez-vous que les outils suivants soient bien installés :
 
 ## Installation
 
-1. Récupérez le dépôt en faisant un **fork** de celui-ci (bouton en haut à droite).
-2. Au moment de créer le fork, GitHub ne copie par défaut que la branche principale. **Décochez "Copy the default branch only"** pour obtenir toutes les branches de l'exercice. Sans elles, aucune commande du TP ne fonctionne. Vous devriez ensuite avoir votre propre dépôt à cette adresse : `https://github.com/l3miage-<votre-nom>/l3m-git-2026-2027`
-3. **Clonez** votre dépôt sur votre machine en local avec la commande suivante, puis ouvrez-le avec votre éditeur :
+>⚠️ Ici je pense pas que le fork soit pas utile, plutôt il faudrait faire une template (plus simple sur la gestion des repos des étudiants) 
+
+~~1. Récupérez le dépôt en faisant un **fork** de celui-ci (bouton en haut à droite).~~
+1. Créer votre repo en utilisant le bouton `useTemplate` depuis le repo [l3m-git-2026-2027](https://github.com/L3-MIAGE-GRENOBLE/l3m-git-2026-2027)
+2. Au moment de créer le repo via la template, GitHub ne copie par défaut que la branche principale. **Décochez "Copy the default branch only"** pour obtenir toutes les branches de l'exercice. Sans elles, aucune commande du TP ne fonctionne. Vous devriez ensuite avoir votre propre dépôt à cette adresse : `https://github.com/l3miage-<votre-nom>/l3m-git-2026-2027`
+3. **Clonez** votre dépôt sur votre machine en local avec la commande suivante, puis ouvrez-le avec votre éditeur (VSCode ou intellij) :
 
 ```sh
 git clone https://github.com/l3miage-<votre-nom>/l3m-git-2026-2027
-code l3m-git-2026-2027
 ```
 
 Vous êtes maintenant prêt·e à démarrer !
@@ -75,19 +77,23 @@ gitGraph
 
 Sur la branche `menu-du-jour`, le dépôt contient un menu de trois plats ainsi qu'une affiche `AFFICHE.md` qui expose le nombre de plats et le prix du menu à des fins de vérification.
 
-La branche `menu-de-demain` contient davantage de plats que la branche `menu-du-jour` et sera le point de départ des exercices 4 et 5.
+Toutes les autres branches constitue des ajouts ou des modifications de plats afin de pouvoir reconstruire le menu complet.
 
-Chaque autre branche constitue des ajouts ou des modifications de plats à faire aux branches `menu-du-jour` et `menu-de-demain` via les commandes `git merge` ou `git rebase`.
+
+~~La branche `menu-de-demain` contient davantage de plats que la branche `menu-du-jour` et sera le point de départ des exercices 4 et 5.~~
+~~Chaque autre branche constitue des ajouts ou des modifications de plats à faire aux branches `menu-du-jour` et `menu-de-demain` via les commandes `git merge` ou `git rebase`.~~
 
 ### Pour commencer
 
 1. Pour vous aider à garantir la cohérence du menu, le Crous vous met à disposition un *vérificateur*. **Après chaque fusion**, celui-ci vous permettra de comparer le nombre de plats et le prix attendus à celui que vous avez actuellement, et vous indiquera également votre progression au niveau des exercices :
 
 ```sh
-java Verificateur.java
+java Verificateur.java <step>
 ```
 
 2. Le Crous vous indique également qu'il souhaite expliciter les fusions dans l'arbre des commits pour mieux suivre votre travail. Il vous faudra donc exécuter la commande suivante :
+
+> ⚠️ à mettre peut être dans l'installation non ?   
 
 ```sh
 git config merge.ff false
@@ -132,7 +138,7 @@ La branche `origin/feat/entrees` ajoute trois entrées au menu, un plat par comm
 1. Lisez d'abord les trois commits, sans vous déplacer :
 
 ```sh
-git log origin/feat/entrees
+git log origin/feat/entrees --graph
 ```
 
 2. Placez-vous sur `menu-du-jour` et fusionnez :
@@ -148,6 +154,8 @@ git merge origin/feat/entrees
 java Verificateur.java 1
 ```
 
+
+> ⚠️ J'ai peur de ce saut entre le exo1 et 3, je pense que beaucoup vont oublié ... 
 4. Puis notez le SHA du commit de fusion que vous venez d'obtenir ; vous en aurez besoin à l'exercice 3.
 
 ```sh
@@ -196,7 +204,7 @@ La branche `origin/feat/desserts-merge` ajoute trois desserts. Elle est partie d
 
 ### À faire
 
-1. Depuis `menu-du-jour`, fusionnez :
+1. Depuis `menu-du-jour`, fusionnez la branche `origin/feat/desserts-merge`:
 
 ```sh
 git merge origin/feat/desserts-merge
@@ -231,6 +239,8 @@ Remarquez au passage que `Menu.java` s'est fusionné tout seul, et correctement 
 ### Objectif
 
 Obtenir le même résultat que l'exercice 2, mais par un rebase plutôt qu'une fusion.
+
+> ⚠️ Ici l'objectif n'est pas correct, il faut 2 graphs ou un gif qui montre le rebase sur la branche master, sinon ils ne vont pas comprendre
 
 ```mermaid
 %%{init: {'gitGraph': {'mainBranchName': 'menu-du-jour'}}}%%
