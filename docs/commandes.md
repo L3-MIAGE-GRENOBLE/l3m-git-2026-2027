@@ -1,5 +1,26 @@
 # Les commandes du TP
 
+Feuille à garder sous les yeux pendant la séance. La première partie ne
+contient **que** les commandes que vous allez réellement taper, dans l'ordre où
+elles servent. Le reste est en fin de page.
+
+Les explications de concepts (zones, fast-forward, branches distantes, etc.)
+sont dans [concepts.md](concepts.md), pas ici.
+
+---
+
+## En cas de problème pendant un rebase
+
+> ```
+> git rebase --abort
+> ```
+>
+> Annule le rebase en cours et vous ramène exactement où vous étiez avant de le
+> lancer. Rien n'est perdu. Utilisez-la sans hésiter : vous pourrez toujours
+> relancer le rebase ensuite.
+
+---
+
 ## Se préparer
 
 | Commande | Ce qu'elle fait |
@@ -9,6 +30,17 @@
 | `git config --global user.email "..."` | L'adresse qui signera vos commits. |
 | `git config --global core.editor "code --wait"` | L'éditeur que Git ouvrira. Indispensable à l'exercice 5. |
 | `git config merge.ff false` | Règle ce dépôt pour que chaque fusion laisse une trace visible dans l'historique. |
+| `bash outils/etat.sh` | Vérifie tout ce qui précède et affiche les corrections manquantes. |
+
+## Vérifier où vous en êtes
+
+| Commande | Ce qu'elle fait |
+|---|---|
+| `java Verificateur.java` | État des lieux : combien de plats, quel total, quel exercice est atteint. |
+| `java Verificateur.java 2` | Détail de l'exercice 2, contrôle par contrôle. |
+
+Lancez-la **après chaque fusion et après chaque résolution de conflit**. C'est
+le seul retour dont vous disposez.
 
 ## Se repérer
 
@@ -32,15 +64,8 @@
 
 | Commande | Ce qu'elle fait |
 |---|---|
-| `git switch menu-du-jour` | Se place sur la branche `menu-du-jour`. |
+| `git switch main` | Se place sur la branche `main`. |
 | `git switch feat/tarifs` | Se place sur `feat/tarifs`, en la créant depuis `origin/` si besoin. |
-| `git switch -c <nom>` | Crée une nouvelle branche à partir d'où vous êtes, et s'y place. |
-
-## Partager
-
-| Commande | Ce qu'elle fait |
-|---|---|
-| `git push -u origin <branche>` | Envoie votre branche sur votre dépôt distant (votre fork). |
 
 ## Assembler
 
@@ -51,15 +76,9 @@
 | `git rebase --continue` | Reprend le rebase après avoir résolu un conflit et fait `git add`. |
 | `git rebase -i HEAD~3` | Rebase interactif : permet de réécrire les trois derniers commits. |
 
-Une fois les conflits résolus (voir [concepts.md](concepts.md) pour lire les marqueurs), `git add <fichier>` puis, selon le cas, `git commit` ou `git rebase --continue`.
-
-## En cas de problème pendant un rebase
-
-> ```
-> git rebase --abort
-> ```
->
-> Annule le rebase en cours et vous ramène exactement où vous étiez avant de le lancer. Rien n'est perdu. Utilisez-la sans hésiter : vous pourrez toujours relancer le rebase ensuite.
+Une fois les conflits résolus (voir [concepts.md](concepts.md) pour lire les
+marqueurs), `git add <fichier>` puis, selon le cas, `git commit` ou
+`git rebase --continue`.
 
 ### Les trois verbes du rebase interactif
 
@@ -73,7 +92,8 @@ Une fois les conflits résolus (voir [concepts.md](concepts.md) pour lire les ma
 
 ## Pour aller plus loin
 
-Rien de ce qui suit n'est nécessaire au fil rouge. Ces commandes servent aux exercices bonus, en fin de sujet.
+Rien de ce qui suit n'est nécessaire au fil rouge. Ces commandes servent aux
+exercices bonus, en fin de sujet.
 
 | Commande | Ce qu'elle fait |
 |---|---|
@@ -82,4 +102,4 @@ Rien de ce qui suit n'est nécessaire au fil rouge. Ces commandes servent aux ex
 | `git reflog` | Liste tout ce que `HEAD` a visité, y compris ce qui n'est plus atteignable. |
 | `git worktree add ../dossier <branche>` | Ouvre un second répertoire de travail sur une autre branche. |
 | `git stash` | Met de côté vos modifications non enregistrées. |
-| `git stash pop` | Remet en place les modifications mises de côté. |
+| `git stash pop` | Les remet en place. |
